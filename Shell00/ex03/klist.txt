@@ -1,0 +1,5 @@
+Credentials cache: API:5353
+        Principal: ldurante@42MADRID.COM
+
+  Issued                Expires               Principal
+Feb 22 15:42:29 2021  Feb 23 01:42:20 2021  krbtgt/42MADRID.COM@42MADRID.COM
