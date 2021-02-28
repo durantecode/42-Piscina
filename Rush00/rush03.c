@@ -3,40 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aparolar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/27 20:10:40 by ldurante          #+#    #+#             */
-/*   Updated: 2021/02/27 20:17:22 by ldurante         ###   ########.fr       */
+/*   Created: 2021/02/28 09:27:12 by aparolar          #+#    #+#             */
+/*   Updated: 2021/02/28 18:33:18 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_putchar(char c);
+void	ft_putchar(char c);
 
-void    rush(int y, int x)
+int		ft_isnegative(int z)
 {
-    int v;
-    int h;
+	if (z < 0)
+		z = -z;
+	return (z);
+}
 
-	v = 1;
-    h = 1;
-    while (h <= x)
-    {
-        v = 1;
-        while (v <= y)
-        {
-            if ((h == 1 && v == 1) || (h == x && v == 1)) //(h == 1 && v == y))
-                ft_putchar('A');
-            else if ((h > 1 && h < x) && (v == 1 || v == y))
-                ft_putchar('B');
-            else if ((h == 1 || h == x) && (v > 1 && v < y))
-                ft_putchar('B');
-            else if ((h == 1 && v == y) || (h == x && v == y))
-                ft_putchar('C');
-  			else
-                ft_putchar(' ');
-            v++;
-        }
-        ft_putchar('\n');
-        h++;
-    }
+void	rush(int x, int y)
+{
+	int x1;
+	int y1;
+
+	x = ft_isnegative(x);
+	y = ft_isnegative(y);
+	y1 = 1;
+	while (y1 <= y)
+	{
+		x1 = 1;
+		while (x1 <= x)
+		{
+			if ((x1 == 1 && y1 == 1) || (x1 == 1 && y1 == y && y > 1))
+				ft_putchar('A');
+			else if ((x1 == x && y1 == 1) || (x1 == x && y1 == y))
+				ft_putchar('C');
+			else if (y1 > 1 && y1 < y && x1 > 1 && x1 < x)
+				ft_putchar(' ');
+			else
+				ft_putchar('B');
+			x1++;
+		}
+		ft_putchar('\n');
+		y1++;
+	}
 }

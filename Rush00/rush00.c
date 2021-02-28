@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush02.c                                           :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aparolar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 09:27:01 by aparolar          #+#    #+#             */
-/*   Updated: 2021/02/28 18:30:40 by ldurante         ###   ########.fr       */
+/*   Created: 2021/02/28 09:26:38 by aparolar          #+#    #+#             */
+/*   Updated: 2021/02/28 20:10:11 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
-
-int		ft_isnegative(int z)
-{
-	if (z < 0)
-		z = -z;
-	return (z);
-}
 
 void	rush(int x, int y)
 {
 	int x1;
 	int y1;
 
-	x = ft_isnegative(x);
-	y = ft_isnegative(y);
 	y1 = 1;
 	while (y1 <= y)
 	{
@@ -33,13 +24,15 @@ void	rush(int x, int y)
 		while (x1 <= x)
 		{
 			if ((x1 == 1 && y1 == 1) || (x1 == x && y1 == 1))
-				ft_putchar('A');
+				ft_putchar('o');
 			else if ((x1 == 1 && y1 == y) || (x1 == x && y1 == y))
-				ft_putchar('C');
+				ft_putchar('o');
 			else if (y1 > 1 && y1 < y && x1 > 1 && x1 < x)
 				ft_putchar(' ');
-			else
-				ft_putchar('B');
+			else if (y1 == 1 || y1 == y)
+				ft_putchar('-');
+			else if (x1 == 1 || x1 == x)
+				ft_putchar('|');
 			x1++;
 		}
 		ft_putchar('\n');

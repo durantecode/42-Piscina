@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:06:58 by ldurante          #+#    #+#             */
-/*   Updated: 2021/02/26 13:06:06 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/02/28 13:37:16 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void    ft_putnbr(int nb)
 			ft_putnbr(147483648);
 			return;
 		}
-/*		else if (nb >= 10)
+		else if (nb >= 10)
 		{
 			ft_putnbr(nb / 10);
 			ft_putnbr(nb % 10);
@@ -40,11 +40,11 @@ void    ft_putnbr(int nb)
 			ft_putnbr(nb);
 		}
 		else
-*/	//		ft_putchar(nb + '0');
+		ft_putchar(nb + '0');
 	}
 }
 
 int main()
 {
-	ft_putnbr(345677);
+	ft_putnbr(434677);
 }
