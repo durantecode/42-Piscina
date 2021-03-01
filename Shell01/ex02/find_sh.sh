@@ -1,1 +1,1 @@
-find * -name "*.sh" -execdir basename {} .sh ';'
+find . -name "*.sh" -exec basename {} .sh ';'
