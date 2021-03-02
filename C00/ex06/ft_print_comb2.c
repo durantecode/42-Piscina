@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 07:29:18 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/02 08:52:58 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/02 19:22:41 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,4 @@ void	ft_print_comb2(void)
 		}
 		c++;
 	}
-}
-
-int		main(void)
-{
-
-	ft_print_comb2();
 }
