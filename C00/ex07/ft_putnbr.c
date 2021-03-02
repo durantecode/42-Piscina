@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:06:58 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/01 21:35:02 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/02 09:47:28 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_putnbr(int nb)
 	else if (nb < 0)
 	{
 		ft_putchar('-');
-		ft_putnbr(nb * -1);
+		ft_putnbr(-nb);
 	}
 	else
 		ft_putchar(nb + 48);
@@ -42,5 +42,5 @@ void	ft_putnbr(int nb)
 
 int		main(void)
 {
-	ft_putnbr(-2147483648);
+	ft_putnbr(-2143648);
 }
