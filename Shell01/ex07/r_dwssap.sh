@@ -6,4 +6,5 @@ cat /etc/passwd |\
 	 awk "FNR>=$FT_LINE1 && FNR<=$FT_LINE2" |\
 	 sed 's/$/,/' |\
 	 tr '\n' ' ' |\
-	 sed 's/, *$/\./'
+	 sed 's/, *$/\./g'
+	 tr '\n' ' '

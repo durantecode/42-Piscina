@@ -6,15 +6,15 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 07:29:18 by ldurante          #+#    #+#             */
-/*   Updated: 2021/02/26 15:01:17 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/02 08:52:58 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(int x)
+void	ft_putchar(char c)
 {
-	write(1, &x, 1);
+	write(1, &c, 1);
 }
 
 void	ft_num(int num)
@@ -23,12 +23,12 @@ void	ft_num(int num)
 	int		b;
 
 	if (num > 9)
-		{
-			a = num / 10;
-			b = num % 10;
-			ft_putchar(a + 48);
-			ft_putchar(b + 48);
-		}
+	{
+		a = num / 10;
+		b = num % 10;
+		ft_putchar(a + 48);
+		ft_putchar(b + 48);
+	}
 	else
 	{
 		ft_putchar('0');
@@ -41,7 +41,7 @@ void	ft_print_comb2(void)
 	int	c;
 	int	d;
 
-	c  = 0 ;
+	c = 0;
 	while (c <= 99)
 	{
 		d = c + 1;
@@ -54,14 +54,14 @@ void	ft_print_comb2(void)
 			{
 				ft_putchar(',');
 				ft_putchar(' ');
-			}	
+			}
 			d++;
 		}
 		c++;
 	}
 }
 
-int main()
+int		main(void)
 {
 
 	ft_print_comb2();
