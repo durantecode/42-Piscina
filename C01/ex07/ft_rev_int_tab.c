@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 12:06:58 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/03 10:35:23 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/03 15:48:08 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/03 20:39:22 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
+	int x;
+	int y;
+	int swap;
+
+	x = 0;
+	y = size - 1;
+	while (x < (size / 2))
+	{
+		swap = tab[x];
+		tab[x] = tab[y];
+		tab[y] = swap;
+		x++;
+		y--;
+	}
+	y = 0;
+	while (y < size)
+	{
+		printf("%d", tab[y]);
+		y++;
+	}
 }
 
-void	ft_putnbr(int nb)
+int		main(void)
 {
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-		return ;
-	}
-	else if (nb > 9 && nb <= 2147483647)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nb);
-	}
-	else
-		ft_putchar(nb + 48);
+	int array[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+	int size = 9;
+
+	ft_rev_int_tab(&array[0], size);
 }

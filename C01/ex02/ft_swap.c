@@ -6,12 +6,15 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 17:28:26 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/02 17:29:19 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/03 10:34:58 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int b;
-	int a;
+	int x;
+
+	x = *a;
+	*a = *b;
+	*b = x;
 }

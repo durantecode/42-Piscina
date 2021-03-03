@@ -1,41 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 12:06:58 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/03 10:35:23 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/03 18:21:04 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/03 21:04:02 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
+	int x;
+	int y;
+	int swap;
+
+	x = 0;
+	while (x < size)
+	{
+		y = x + 1;
+		while (y < size)
+		{
+			if (tab[y] < tab[x])
+			{
+				swap = tab[x];
+				tab[x] = tab[y];
+				tab[y] = swap;
+			}
+			y++;
+		}
+		x++;
+	}
+	y = 0;
+	while (y < size)
+	{
+		printf("%d", y);
+		y++;
+	}
 }
 
-void	ft_putnbr(int nb)
+int		main(void)
 {
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-		return ;
-	}
-	else if (nb > 9 && nb <= 2147483647)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nb);
-	}
-	else
-		ft_putchar(nb + 48);
+	int array[11] = {6, 3, 4, 5, 4, 8, 9, 3, 5, 7, 2};
+	int size = 11;
+
+	ft_sort_int_tab(&array[0], size);
 }
