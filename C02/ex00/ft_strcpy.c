@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 18:21:04 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/04 12:17:55 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/04 09:17:21 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/04 10:46:28 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int x;
-	int y;
-	int swap;
+#include <stdio.h>
 
-	x = 0;
-	while (x < size)
+char	*ft_strcpy(char *dest, char *src)
+{
+	char	*pointer;
+
+	pointer = dest;
+	while (*src != '\0')
 	{
-		y = x + 1;
-		while (y < size)
-		{
-			if (tab[y] < tab[x])
-			{
-				swap = tab[x];
-				tab[x] = tab[y];
-				tab[y] = swap;
-			}
-			y++;
-		}
-		x++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
+	*dest = '\0';
+	return (pointer);
+}
+
+int		main(void)
+{
+	char	src[] = "Hola";
+	char	dest[4];
+
+	printf("%s", ft_strcpy(dest, src));
 }

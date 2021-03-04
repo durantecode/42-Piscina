@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 18:21:04 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/04 12:17:55 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/04 10:47:00 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/04 15:22:10 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+#include <stdio.h>
+
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int x;
-	int y;
-	int swap;
+	int		x;
 
 	x = 0;
-	while (x < size)
+	while (x < n && src[x] != '\0')
 	{
-		y = x + 1;
-		while (y < size)
-		{
-			if (tab[y] < tab[x])
-			{
-				swap = tab[x];
-				tab[x] = tab[y];
-				tab[y] = swap;
-			}
-			y++;
-		}
+		dest[x] = src[x];
 		x++;
 	}
+	while (x < n)
+	{
+		dest[x] = '\0';
+		x++;
+	}
+	return (dest);
+}
+
+int		main(void)
+{
+	char	array[6];
+
+	printf("%s", ft_strncpy(array, "abc", 6));
 }

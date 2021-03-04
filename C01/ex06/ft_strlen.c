@@ -6,12 +6,9 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 15:04:54 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/03 15:47:49 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/04 12:12:39 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <unistd.h>
 
 int		ft_strlen(char *str)
 {
@@ -22,13 +19,5 @@ int		ft_strlen(char *str)
 	{
 		x++;
 	}
-	printf("%d", x);
 	return (x);
-}
-
-int		main(void)
-{
-	char	ptr[] = "HELLO WORLD!";
-
-	ft_strlen(&ptr[0]);
 }

@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 18:21:04 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/04 12:17:55 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/04 19:26:15 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/04 20:54:54 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+#include <stdio.h>
+
+char	*ft_strupcase(char *str)
 {
 	int x;
-	int y;
-	int swap;
 
 	x = 0;
-	while (x < size)
+	while (str[x] != '\0')
 	{
-		y = x + 1;
-		while (y < size)
+		if (str[x] >= 'a' && str[x] <= 'z')
 		{
-			if (tab[y] < tab[x])
-			{
-				swap = tab[x];
-				tab[x] = tab[y];
-				tab[y] = swap;
-			}
-			y++;
+			str[x]= str [x] - 32;
+			x++;
 		}
+	}
+	x = 0;
+	while (x <= 12)
+	{
+		printf("%c", str[x]);
 		x++;
 	}
+	return (str);
 }
+
+int		main()
+{	
+	char	a[] = "abcdfgsert";
+	ft_strupcase(&a[0]);
+}
+

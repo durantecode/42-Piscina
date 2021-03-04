@@ -6,11 +6,9 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:54:23 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/02 16:38:22 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/04 11:59:54 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_ft(int *nbr)
 {

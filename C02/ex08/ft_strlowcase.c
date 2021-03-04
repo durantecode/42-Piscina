@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 18:21:04 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/04 12:17:55 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/04 20:53:08 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/04 20:55:51 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+#include <stdio.h>
+
+char	*ft_strlowcase(char *str)
 {
 	int x;
-	int y;
-	int swap;
 
 	x = 0;
-	while (x < size)
+	while (str[x] != '\0')
 	{
-		y = x + 1;
-		while (y < size)
+		if (str[x] >= 'A' && str[x] <= 'Z')
 		{
-			if (tab[y] < tab[x])
-			{
-				swap = tab[x];
-				tab[x] = tab[y];
-				tab[y] = swap;
-			}
-			y++;
+			str[x]= str [x] + 32;
+			x++;
 		}
+	}
+	x = 0;
+	while (x <= 12)
+	{
+		printf("%c", str[x]);
 		x++;
 	}
+	return (str);
+}
+
+int		main()
+{	
+	char	a[] = "ABCDFGHJ";
+	ft_strlowcase(&a[0]);
 }

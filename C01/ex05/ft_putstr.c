@@ -6,11 +6,10 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 11:12:36 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/03 15:04:25 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/04 12:09:55 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -28,11 +27,4 @@ void	ft_putstr(char *str)
 		ft_putchar(str[x]);
 		x++;
 	}
-}
-
-int		main(void)
-{
-	char	ptr[] = "Hola Mundo cruel";
-
-	ft_putstr(&ptr[0]);
 }
