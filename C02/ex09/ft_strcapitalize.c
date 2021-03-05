@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 18:21:04 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/05 14:09:02 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/05 10:42:54 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/05 14:09:48 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+#include <stdio.h>
+#include <unistd.h>
+
+char	*ft_strcapitalize(char *str)
 {
 	int x;
-	int y;
-	int swap;
 
-	x = 0;
-	while (x < size)
+	x = 0;	
+	if (str[x] >= 'a' && str[x] <= 'z')
+		str[x] = str[x] - 32;
+	while (str[x] != '\0')
 	{
-		y = x + 1;
-		while (y < size)
-		{
-			if (tab[y] < tab[x])
+		if (str[x] >= 'a' && str[x] <= 'z' && str[x - 1]  >= 32 && str[x - 1] <= 47)
 			{
-				swap = tab[x];
-				tab[x] = tab[y];
-				tab[y] = swap;
+				str[x] = str[x] - 32;
 			}
-			y++;
-		}
 		x++;
 	}
+	return (str);
 }
+
+int		main(void)
+{
+	char arr[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	printf("%s", ft_strcapitalize(arr));
+}
+
