@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 09:17:21 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/06 12:03:35 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/06 08:18:08 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/06 16:19:46 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	char	*pointer;
-
-	pointer = dest;
-	while (*src != '\0')
+	int x;
+	int y;
+	int buffer;
+	
+	x = 0;
+	y = 0;
+	while (size > 1 && (dest[x] = src[x]) != 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[x] = src[x];
+		size--;
+		x++;
 	}
-	*dest = '\0';
-	return (pointer);
+	dest[x] = '\0';
+	x = 0;
+	while (src[x])
+	{
+		x++;
+	}
+
+	return (x);
 }
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	//char	src[] = "Hola";
 
-    char	dest[4];
-    if (argc == 2)
-    printf("%s", ft_strcpy(dest, argv[1]));
-}
+

@@ -1,37 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 09:17:21 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/06 12:03:35 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/06 11:53:47 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/06 11:54:43 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	char	*pointer;
-
-	pointer = dest;
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (pointer);
-}
-
-int		main(int argc, char **argv)
-{
-	//char	src[] = "Hola";
-
-    char	dest[4];
-    if (argc == 2)
-    printf("%s", ft_strcpy(dest, argv[1]));
-}
+int     ft_rowleft()
