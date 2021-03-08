@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 09:17:21 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/08 15:12:25 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/08 20:05:33 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/08 21:33:04 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	char	*pointer;
+	unsigned int x;
 
-	pointer = dest;
-	while (*src != '\0')
+	x = 0;
+	while (n > 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		if (*s1 == 0)
+			return (0);
+		s1++;
+		s2++;
+		n--;
 	}
-	*dest = '\0';
-	return (pointer);
+	return (0);
 }
 
-int		main(int argc, char **argv)
+int 	main(void)
 {
-    char	dest[4];
-    
-	if (argc == 2)
-    printf("%s", ft_strcpy(dest, argv[1]));
+	int z = ft_strncmp("zzxzz", "zzdzz", 3);
+	int x = strncmp("zzzz", "zzzz", 3);
+
+	printf("%d\n", z);
+	printf("%d\n", x);
 }
