@@ -6,11 +6,12 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 12:21:20 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/08 15:06:22 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/09 09:39:40 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -30,22 +31,29 @@ void    ft_print_hex(int x)
     ft_putchar(a);
     ft_putchar(b);
 }
+/*
+void	ft_print_addr(void *addr)
+{
+	int i;
+	char addr_[15];
+}
+*/
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
 	int x;
 	char	*str;
 
+//	*str = &addr;
 	x = 0;
-	str = addr;
 	if (size != 0)
 	{
-		while (str[x] != 0)
+		while (x < size)
 		{
-		//	ft_putchar(str[0]);
+			ft_print_hex(str[x]);
 			x++;
 		}
-		write(1, &addr, sizeof(addr));
+		printf("%x\n", addr);
 	}
 }
 

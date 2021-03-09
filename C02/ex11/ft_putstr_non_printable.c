@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 09:53:54 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/08 15:02:50 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/09 21:02:06 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putstr_non_printable(char *str)
 	x = 0;
 	while (str[x] != '\0')
 	{
-		if (str[x] < 32 || str[x] == 127)
+		if (str[x] < 32 || str[x] > 126)
 			{	
 				ft_print_hex(str[x]);
 			}
@@ -53,5 +53,5 @@ void	ft_putstr_non_printable(char *str)
 
 int		main(void)
 {
-	ft_putstr_non_printable("Coucou\n\n\ntu va\ts bi\xen ?");
+	ft_putstr_non_printable("Coƒucou\n\n\ntu va\ts bi\xen ?");
 }

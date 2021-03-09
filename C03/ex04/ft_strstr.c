@@ -1,52 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 08:18:08 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/09 20:53:53 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/09 12:03:00 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/09 17:22:54 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int x;
-	int buffer;
-
+	int y;
+		
 	x = 0;
-	buffer = size - 1;
-	if (size > 0)
+	if (*to_find == '\0')
+		return (str);
+	while (str[x] != '\0')
 	{
-		while (buffer > 0 && src[x] != '\0')
+		y = 0;
+		while (to_find[y] == str[x + y])
 		{
-			dest[x] = src[x];
-			buffer--;
-			x++;
+			if (to_find[y + 1] == '\0')
+			{
+				return (str + x);
+			}
+			y++;
 		}
-	}
-	else
-	{
-		dest[x] = '\0';
-	}
-	x = 0;
-	while (src[x])
-	{
 		x++;
 	}
-	printf("dest: %s\n", dest);
-	return (x);
+	return (0);
 }
 
 int		main(void)
 {
-	char dest[6];
-	char src[] = "HolaMundo";
-
-	printf("src: %s\n", src);
-	printf("longitud de src: %d\n", ft_strlcpy(dest, src, 3));
-	return (0);
-}
+	char	*largestring = "Foo Bir Baz";
+	char	*smallstring = "Bar";
+	printf("%s\n", ft_strstr(largestring, smallstring));
+//	printf("%s\n", strstr(largestring, smallstring));
+}	

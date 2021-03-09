@@ -1,52 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 08:18:08 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/09 20:53:53 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/09 10:32:06 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/09 11:56:08 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
+	unsigned int n;
 	int x;
-	int buffer;
+	int y;
 
 	x = 0;
-	buffer = size - 1;
-	if (size > 0)
-	{
-		while (buffer > 0 && src[x] != '\0')
-		{
-			dest[x] = src[x];
-			buffer--;
-			x++;
-		}
-	}
-	else
-	{
-		dest[x] = '\0';
-	}
-	x = 0;
-	while (src[x])
+	y = 0;
+	while (dest[x] != '\0')
 	{
 		x++;
 	}
-	printf("dest: %s\n", dest);
-	return (x);
+	while (y <= nb)
+	{
+		dest[x] = src[y];
+		x++;
+		y++;
+	}
+	dest[x] = '\0';
+	return (dest);
 }
 
 int		main(void)
 {
-	char dest[6];
-	char src[] = "HolaMundo";
-
-	printf("src: %s\n", src);
-	printf("longitud de src: %d\n", ft_strlcpy(dest, src, 3));
-	return (0);
+	char	array1[14] = "hola ";
+	char	array2[7] = "12345";
+	printf("%s\n", ft_strncat(array1, array2, 4));
+//	printf("%s\n", strncat(array1, array2, 4));
 }
+			
