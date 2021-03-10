@@ -6,47 +6,46 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 08:18:08 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/09 20:53:53 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:37:42 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int x;
-	int buffer;
+	unsigned int x;
+	unsigned int buffer;
 
 	x = 0;
-	buffer = size - 1;
-	if (size > 0)
+	buffer = 0;
+	while (src[x] != '\0')
+		x++;
+	buffer = x;
+	x = 0;
+	if (size != 0)
 	{
-		while (buffer > 0 && src[x] != '\0')
+		while (x < size)
 		{
-			dest[x] = src[x];
-			buffer--;
+			if (x == size - 1)
+				dest[x] = 0;
+			else
+				dest[x] = src[x];
 			x++;
 		}
 	}
-	else
-	{
-		dest[x] = '\0';
-	}
-	x = 0;
-	while (src[x])
-	{
-		x++;
-	}
-	printf("dest: %s\n", dest);
-	return (x);
+	printf("%s\n", dest);
+	return (buffer);
 }
 
 int		main(void)
 {
-	char dest[6];
-	char src[] = "HolaMundo";
-
+	char dest[10];
+	char src[] = "Ho6yt543trtete";
+	
+	printf("%lu\n", strlcpy(dest, src, 8)); 
 	printf("src: %s\n", src);
-	printf("longitud de src: %d\n", ft_strlcpy(dest, src, 3));
+	printf("longitud de src: %d\n", ft_strlcpy(dest, src, 8));
 	return (0);
 }

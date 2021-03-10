@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:27:21 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/08 20:56:58 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:24:36 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ int		ft_strcmp(char *s1, char *s2)
 
 int		main(void)
 {
-	int x = ft_strcmp("qwertyasdfgh", "234FDSVCXvfsdi");
-	int z = strcmp("aaa", "zzz");
+	char h[] = "aaa";
+	char p[] = "zzz";
+	int x = ft_strcmp("aaa", "zzz");
+	int z = strcmp(h, p);
 	printf("%d\n", x);
 	printf("%d\n", z);
+
 }

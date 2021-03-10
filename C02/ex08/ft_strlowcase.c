@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 20:53:08 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/04 20:55:51 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/10 11:30:54 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strlowcase(char *str)
 		if (str[x] >= 'A' && str[x] <= 'Z')
 		{
 			str[x]= str [x] + 32;
-			x++;
 		}
+		x++;
 	}
 	x = 0;
-	while (x <= 12)
+	while (str[x] != '\0')
 	{
 		printf("%c", str[x]);
 		x++;

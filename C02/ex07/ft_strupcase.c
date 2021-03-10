@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 19:26:15 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/04 20:54:54 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/10 11:29:34 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strupcase(char *str)
 		if (str[x] >= 'a' && str[x] <= 'z')
 		{
 			str[x]= str [x] - 32;
-			x++;
 		}
+		x++;
 	}
 	x = 0;
-	while (x <= 12)
+	while (str[x] != '\0')
 	{
 		printf("%c", str[x]);
 		x++;
