@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 10:32:06 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/09 11:56:08 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:06:09 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int n;
-	int x;
-	int y;
+	unsigned int x;
+	unsigned int y;
 
 	x = 0;
 	y = 0;
@@ -25,7 +24,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	{
 		x++;
 	}
-	while (y <= nb)
+	while (y < nb && src[y] != '\0')
 	{
 		dest[x] = src[y];
 		x++;
@@ -37,9 +36,9 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 int		main(void)
 {
-	char	array1[14] = "hola ";
+	char	array1[14] = "hola";
 	char	array2[7] = "12345";
-	printf("%s\n", ft_strncat(array1, array2, 4));
-//	printf("%s\n", strncat(array1, array2, 4));
+	printf("Funcion mía: %s\n", ft_strncat(array1, array2, 3));
+//	printf("Funcion original: %s\n", strncat(array1, array2, 2234));
 }
 			

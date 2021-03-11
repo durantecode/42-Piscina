@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:27:21 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/11 10:29:30 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/11 09:24:42 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/11 09:25:00 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-int		ft_strcmp(char *s1, char *s2)
+void	ft_putchar(char c)
 {
-	while (*s1 && *s2 && (*s1 == *s2))
-	{
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
+	write(1, &c, 1);
 }
 
-int		main(void)
+void	ft_putnbr(int nb)
 {
-	char h[] = "azb";
-	char p[] = "aac";
-	int x = ft_strcmp("azb", "aac");
-	int z = strcmp(h, p);
-
-	printf("%d\n", x);
-	printf("%d\n", z);
-
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
+		return ;
+	}
+	else if (nb > 9 && nb <= 2147483647)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else
+		ft_putchar(nb + 48);
 }

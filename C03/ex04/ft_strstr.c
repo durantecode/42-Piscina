@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 12:03:00 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/09 17:22:54 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/11 09:53:19 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strstr(char *str, char *to_find)
 {
 	int x;
 	int y;
-		
+
 	x = 0;
 	if (*to_find == '\0')
 		return (str);
@@ -39,8 +39,9 @@ char	*ft_strstr(char *str, char *to_find)
 
 int		main(void)
 {
-	char	*largestring = "Foo Bir Baz";
+	char	*largestring = "Foo Bar Baz";
 	char	*smallstring = "Bar";
+
 	printf("%s\n", ft_strstr(largestring, smallstring));
 //	printf("%s\n", strstr(largestring, smallstring));
 }	

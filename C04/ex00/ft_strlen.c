@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 17:27:21 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/11 10:29:30 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/11 09:22:59 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/11 09:23:10 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strlen(char *str)
 {
-	while (*s1 && *s2 && (*s1 == *s2))
+	int x;
+
+	x = 0;
+	while (str[x] != '\0')
 	{
-		s1++;
-		s2++;
+		x++;
 	}
-	return (*s1 - *s2);
-}
-
-int		main(void)
-{
-	char h[] = "azb";
-	char p[] = "aac";
-	int x = ft_strcmp("azb", "aac");
-	int z = strcmp(h, p);
-
-	printf("%d\n", x);
-	printf("%d\n", z);
-
+	return (x);
 }
