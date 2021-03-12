@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 17:48:18 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/11 12:50:43 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:38:01 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
 	if (src_len == 0 && size == 0)
 		return (0);
 	else if (offset > size -1)
-		return (size);
+		return (src_len + size);
 	while ((*src != '\0') && (offset < size - 1) && (size != 0))
 	{
 		*(dest + offset) = *src;
@@ -48,10 +48,10 @@ unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
 
 int     main(void)
 {
-    char dest[20] = "mundo";
-    char src[] = "123456";
+    char dest[200] = "JzqDxbKLVXBJWukmHPVPHoUhy ";
+    char src[] = "EOYAByAIFCKtLlxNCkMYPJWQDgTKtdSlniZPiD";
 
-//	printf("longitud función mía: %d\n", ft_strlcat(dest, src, 8));
+	printf("longitud función mía: %d\n", ft_strlcat(dest, src, 8));
 	printf("longitud función original: %lu\n", strlcat(dest, src, 8));
 	printf("%s\n", dest);
     return (0);

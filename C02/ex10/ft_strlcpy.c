@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 08:18:08 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/10 15:37:42 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/11 16:18:48 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 int		main(void)
 {
-	char dest[10];
+	char dest[10] = "hola";
 	char src[] = "Ho6yt543trtete";
 	
-	printf("%lu\n", strlcpy(dest, src, 8)); 
-	printf("src: %s\n", src);
-	printf("longitud de src: %d\n", ft_strlcpy(dest, src, 8));
+//	printf("%lu\n", strlcpy(dest, src, 8)); 
+//	printf("src: %s\n", src);
+	printf("longitud de src: %d\n", ft_strlcpy(dest, src, 20));
 	return (0);
 }
