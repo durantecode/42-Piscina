@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 09:26:47 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/11 20:48:16 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/13 10:18:09 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ int		ft_atoi(char *str)
 int		main(void)
 {
 	printf("%d\n", ft_atoi("    \n\t---+--+1234ab567"));
+	//printf("%d\n", atoi("-12345ab567"));
 }

@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 09:40:18 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/13 07:37:27 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/13 07:38:30 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/13 08:30:08 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strcat(char *dest, char *src)
+int		ft_iterative_factorial(int nb)
 {
-	int x;
-	int y;
-	
-	x = 0;
-	y = 0;
-	while (dest[x] != '\0')
+	int i;
+	int n;
+
+	i = 1;
+	n = 1;
+	if (nb < 0)
+		return (0);
+	if (nb == 0)
+		return (1);
+	while (i <= nb)
 	{
-		x++;
+		n = n * i;
+		i++;
 	}
-	while (src[y] != '\0')
-	{
-		dest[x] = src[y];
-		x++;
-		y++;
-	}
-	dest[x] = '\0';
-	return (dest);
+	return (n);
 }
 
 int		main(void)
 {
-	char	array1[14] = "hola ";
-	char	array2[7] = "12345";
-	printf("%s\n", ft_strcat(array1, array2));
-//	printf("%s\n", strcat(array1, array2));
-
+	printf("%d\n", ft_iterative_factorial(0));
 }

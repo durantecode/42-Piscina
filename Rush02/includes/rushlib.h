@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   rushlib.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 09:17:21 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/12 13:17:18 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/13 12:24:28 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/13 16:48:52 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef RUSHLIB_H
+#define	RUSHLIB_H
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	char	*pointer;
+	#include <unistd.h>
+	#include <stdlib.h>
+	#include <fcntl.h>
+	#include <stdio.h>
 
-	pointer = dest;
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (pointer);
-}
+	int		ft_atoi(char *str);
+	void	ft_putchar(char c);
+	void	ft_check_error(int n);
+	int		ft_checknumber(int n);
 
-int		main(int argc, char **argv)
-{
-    char	dest[4];
-    
-	if (argc == 2)
-    printf("%s", ft_strcpy(dest, argv[1]));
-}
+#endif

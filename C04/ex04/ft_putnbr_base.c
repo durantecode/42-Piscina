@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 19:30:59 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/11 21:03:42 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/12 11:47:55 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ void	ft_putnbr(int nb)
 		ft_putchar(nb + 48);
 }
 
-void	ft_put_binary(int nb)
-{
-	
-}
-
 void	ft_putnbr_base(int nbr, char *base)
 {
 	char	*base_hex = "0123456789ABCDEF";
@@ -58,5 +53,5 @@ void	ft_putnbr_base(int nbr, char *base)
 
 int		main(void)
 {
-	ft_putnbr_base()
+	ft_putnbr_base();
 }

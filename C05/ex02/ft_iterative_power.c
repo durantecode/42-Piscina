@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 09:40:18 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/13 07:37:27 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/13 08:42:54 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/13 09:41:15 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strcat(char *dest, char *src)
+int		ft_iterative_power(int nb, int power)
 {
-	int x;
-	int y;
-	
-	x = 0;
-	y = 0;
-	while (dest[x] != '\0')
+	int i;
+
+	i = 1;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (power > 0)
 	{
-		x++;
+		i = i * nb;
+		power--;
 	}
-	while (src[y] != '\0')
-	{
-		dest[x] = src[y];
-		x++;
-		y++;
-	}
-	dest[x] = '\0';
-	return (dest);
+	return (i);
 }
 
 int		main(void)
 {
-	char	array1[14] = "hola ";
-	char	array2[7] = "12345";
-	printf("%s\n", ft_strcat(array1, array2));
-//	printf("%s\n", strcat(array1, array2));
-
+	printf("%d\n", ft_iterative_power(5, 5));
 }

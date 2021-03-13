@@ -1,47 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 12:03:00 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/13 17:20:31 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/13 11:45:27 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/13 12:19:51 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strstr(char *str, char *to_find)
+int		ft_recursive_power(int nb, int power)
 {
-	int x;
-	int y;
+	int i;
 
-	x = 0;
-	if (*to_find == '\0')
-		return (str);
-	while (str[x] != '\0')
-	{
-		y = 0;
-		while (to_find[y] == str[x + y])
-		{
-			if (to_find[y + 1] == '\0')
-			{
-				return (str + x);
-			}
-			y++;
-		}
-		x++;
-	}
+	i = 1;
+	if (power == 0)
+		return (1);
+	if (power > 1)
+		return (nb * ft_recursive_power(nb - 1, power));
 	return (0);
 }
 
 int		main(void)
 {
-	char	*largestring = "Foo Bar Baz";
-	char	*smallstring = "Bar";
-
-	printf("%s\n", ft_strstr(largestring, smallstring));
-//	printf("%s\n", strstr(largestring, smallstring));
-}	
+	printf("%d\n", ft_recursive_power(5, 5));
+}
