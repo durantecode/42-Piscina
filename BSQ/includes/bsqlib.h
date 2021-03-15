@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   bsqlib.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 07:38:30 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 12:07:52 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/13 12:24:28 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/15 18:25:14 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef BSQLIB_H
+# define BSQLIB_H
 
-int		ft_iterative_factorial(int nb)
-{
-	int i;
-	int n;
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <stdio.h>
 
-	i = 1;
-	n = 1;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i <= nb)
-	{
-		n = n * i;
-		i++;
-	}
-	return (n);
-}
+void	ft_check_error(int n);
 
-int		main(void)
-{
-	printf("%d\n", ft_iterative_factorial(45));
-}
+
+#endif

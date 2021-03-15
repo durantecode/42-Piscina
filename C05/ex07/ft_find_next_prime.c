@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 07:38:30 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 12:07:52 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/15 08:58:00 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/15 14:02:26 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_iterative_factorial(int nb)
+int		ft_is_prime(int nb)
 {
-	int i;
-	int n;
+	int prime;
 
-	i = 1;
-	n = 1;
-	if (nb < 0)
+	prime = 2;
+	if (nb == 0 || nb == 1 || nb < 0)
 		return (0);
-	if (nb == 0)
-		return (1);
-	while (i <= nb)
+	while (prime <= nb / prime)
 	{
-		n = n * i;
-		i++;
+		if (nb % prime == 0)
+			return (0);
+		prime++;
 	}
-	return (n);
+	return (1);
+}
+
+int		ft_find_next_prime(int nb)
+{
+	while (ft_is_prime(nb) == 0)
+		nb++;
+	return (nb);
 }
 
 int		main(void)
 {
-	printf("%d\n", ft_iterative_factorial(45));
+	printf("%d\n", ft_find_next_prime(402));
 }

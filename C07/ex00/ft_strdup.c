@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 07:38:30 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 12:07:52 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/15 16:08:02 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/15 16:09:43 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
 
-int		ft_iterative_factorial(int nb)
+char	*ft_strdup(char *src)
 {
-	int i;
-	int n;
-
-	i = 1;
-	n = 1;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i <= nb)
-	{
-		n = n * i;
-		i++;
-	}
-	return (n);
-}
-
-int		main(void)
-{
-	printf("%d\n", ft_iterative_factorial(45));
+	
 }

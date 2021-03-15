@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 08:30:35 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/13 08:42:31 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/15 15:18:45 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int		ft_recursive_factorial(int nb)
 
 int		main(void)
 {
-	printf("%d\n", ft_recursive_factorial(0));
+	printf("%d\n", ft_recursive_factorial(3));
 }

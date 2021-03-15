@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 07:38:30 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 12:07:52 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/15 09:42:18 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/15 16:05:29 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_iterative_factorial(int nb)
+int		main(int argc, char **argv)
 {
 	int i;
-	int n;
 
-	i = 1;
-	n = 1;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i <= nb)
+	i = 0;
+	if (argc == 1)
 	{
-		n = n * i;
-		i++;
+		while (argv[0][i] != '\0')
+		{
+			write(1, &argv[0][i], 1);
+			i++;
+		}
 	}
-	return (n);
-}
-
-int		main(void)
-{
-	printf("%d\n", ft_iterative_factorial(45));
+	write(1, "\n", 1);
+	return (0);
 }

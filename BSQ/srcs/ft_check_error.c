@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_check_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 07:38:30 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 12:07:52 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/15 18:33:34 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/15 18:35:33 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_iterative_factorial(int nb)
+void	ft_check_error(int n)
 {
-	int i;
-	int n;
-
-	i = 1;
-	n = 1;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i <= nb)
-	{
-		n = n * i;
-		i++;
-	}
-	return (n);
-}
-
-int		main(void)
-{
-	printf("%d\n", ft_iterative_factorial(45));
+	if (n == 1)
+		write(1, "error1\n", 7);
+	if (n == 2)
+		write(1, "error1\n", 7);
+	if (n == 3)
+		write(1, "error1\n", 7);
+	if (n == 4)
+		write(1, "error1\n", 7);
 }

@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 07:38:30 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 12:07:52 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/15 07:50:36 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/15 21:14:31 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_iterative_factorial(int nb)
+int		ft_sqrt(int nb)
 {
-	int i;
-	int n;
+	int	sq;
 
-	i = 1;
-	n = 1;
-	if (nb < 0)
+	sq = 0;
+	if (nb <= 0)
 		return (0);
-	if (nb == 0)
-		return (1);
-	while (i <= nb)
-	{
-		n = n * i;
-		i++;
-	}
-	return (n);
+	while (sq * sq < nb && sq <= 46340)
+		sq++;
+	if (sq * sq == nb)
+		return (sq);
+	else
+		return (0);
 }
 
 int		main(void)
 {
-	printf("%d\n", ft_iterative_factorial(45));
+	printf("%d\n", ft_sqrt(2147483647));
 }
