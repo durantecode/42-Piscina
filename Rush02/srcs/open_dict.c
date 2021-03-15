@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   open_dict.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 09:26:47 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/14 16:50:38 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/14 12:52:18 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/14 15:26:34 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/rushlib.h"
 
-int		ft_atoi(char *str)
+char	*open_dict()
 {
-	int number;
-	int negative;
-	int i;
-
-	number = 0;
-	negative = 1;
-	i = 0;
-	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-		{
-			negative = -negative;
-		}
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		number = number * 10 + str[i] - 48;
-		i++;
-	}
-	return (number * negative);
+	ssize_t count_dict;
+	unsigned int size;
+	int fd;
+	char *dict;
+	
+	dict = (char *)malloc(4096);
+	count_dict = 65535; // Tamaño unsigned int de 2 bytes
+	fd = open("numbers.dict", O_RDONLY);
+	size = read(fd, dict, count_dict);
+	dict[size] = '\0';
+	if (fd == -1)
+		ft_check_error(-1);
+	else if(count_dict == 0)
+		ft_check_error(0);
+	// Falta hacer close
+	return (dict);
 }
