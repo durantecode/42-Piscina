@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_check_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 09:26:47 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/14 16:50:38 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/13 16:03:45 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/14 19:21:25 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/rushlib.h"
 
-int		ft_atoi(char *str)
+void	ft_check_error(int n)
 {
-	int number;
-	int negative;
-	int i;
-
-	number = 0;
-	negative = 1;
-	i = 0;
-	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-		{
-			negative = -negative;
-		}
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		number = number * 10 + str[i] - 48;
-		i++;
-	}
-	return (number * negative);
+	if (n == -1)
+		write(1, "Dict Error\n", 11);
+	else if (n == 0)
+		write(1, "Error\n", 6);
+	else if (n == 1)
+		write(1, "Invalid argument count\n", 23);
+	else if (n == 2)
+		write(1, "Argument error\n", 16);
 }

@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_number.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 10:37:47 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/14 16:42:32 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/14 17:29:58 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/14 20:55:38 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/rushlib.h"
 
-int		main(int argc, char **argv)
+int		ft_check_number(char *str)
 {
-	int num_entry;
-	char *dict;
-	char *num_letter;
+	int		i;
+	int		str_long;
 
-	num_entry = ft_atoi(argv[1]);
-	dict = open_dict();
-	get_dict(dict);
-	num_letter = ft_search_position(num_entry);
-	if (argc == 2)
+	i = 0;
+	str_long = ft_strlen(str);
+	if ((str_long > 10) ||
+	((str_long == 10) && (ft_strcmp("4294967295", str) < 0)))
 	{
-		printf("%s\n", num_letter);
+		ft_check_error(0);
+		return (0);
 	}
-   	return (0);
+	else
+	{
+		while (str[i] != '\0')
+		{
+			if ((str[i] < '0') || (str[i] > '9'))
+			{
+				ft_check_error(2);
+				return (0);
+			}
+			i++;
+		}
+	}
+	return (1);
 }

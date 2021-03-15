@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rushlib.h                                          :+:      :+:    :+:   */
+/*   ft_split_number.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 12:24:28 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/14 16:43:36 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/14 17:32:01 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/14 21:42:26 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RUSHLIB_H
-#define	RUSHLIB_H
+#include "../includes/rushlib.h"
 
-	#include <unistd.h>
-	#include <stdlib.h>
-	#include <fcntl.h>
-	#include <stdio.h>
-	
-	char g_array_letter[50][70];
+void	ft_split_number(int value, int amount)
+{
+	char	*s1;
+	char	*s2;
 
-	int		ft_atoi(char *str);
-	void	ft_putchar(char c);
-	void	ft_check_error(int n);
-	char	*open_dict();
-	void	get_dict(char *get_dict);
-	char	*ft_search_position(int pos1);
-
-#endif
+	s1 = ft_search_position(value);
+	ft_putstr(s1);
+	ft_putchar(' ');
+	if (amount >= 28 && amount <= 31)
+	{
+		s2 = ft_search_position(amount);
+		ft_putstr(s2);
+		ft_putchar(' ');
+	}
+}
