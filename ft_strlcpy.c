@@ -1,47 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 09:26:47 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/16 16:46:57 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/15 20:59:50 by ymartin-          #+#    #+#             */
+/*   Updated: 2021/03/16 16:21:48 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int		ft_atoi(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int number;
-	int negative;
-	int i;
+	unsigned int	i;
+	int				t;
 
-	number = 0;
-	negative = 1;
+	t = 0;
 	i = 0;
-	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
+	while (src[i] != '\0' && i < size)
 	{
-		if (str[i] == '-')
-		{
-			negative = -negative;
-		}
+		dest[t] = src[i];
+		i++;
+		t++;
+	}
+	dest[t - 1] = '\0';
+	while (src[i] != '\0')
+	{
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		number = number * 10 + str[i] - 48;
-		i++;
-	}
-	return (number * negative);
+	return (i);
 }
 
 int		main(void)
 {
-	printf("%d\n", ft_atoi("asd    ---+--+1234ab567"));
-	printf("%d\n", atoi(".´ç$%-12345ab567"));
+//	char dest[10] = "hola";
+//	char src[] = "Hoete";
+	
+//	printf("%lu\n", strlcpy(dest, src, 8)); 
+//	printf("src: %s\n", src);
+	printf("longitud de src: %d\n", ft_strlcpy("HOLA", "ADIOS", 20));
+	return (0);
 }

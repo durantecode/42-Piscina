@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 10:05:50 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/16 18:44:00 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/15 16:05:41 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,57 +17,69 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strlen(char *str)
 {
-	while (*s1 && *s2 && (*s1 == *s2))
+	int x;
+
+	x = 0;
+	while (str[x] != '\0')
 	{
-		s1++;
-		s2++;
+		x++;
 	}
-	return (*s1 - *s2);
+	return (x);
 }
 
-void	ft_putstr(char **str)
+char	*ft_sort_int_tab(char *tab, int size)
 {
 	int x;
 	int y;
+	int swap;
 
-	x = 1;
-	while (str[x] != '\0')
+	x = 0;
+	while (x < size)
 	{
-		y = 0;
-		while (str[x][y])
+		y = x + 1;
+		while (y < size)
 		{
-			ft_putchar(str[x][y]);
+			if (tab[y] < tab[x])
+			{
+				swap = tab[x];
+				tab[x] = tab[y];
+				tab[y] = swap;
+			}
 			y++;
 		}
-		ft_putchar('\n');
+		x++;
+	}
+	return (tab);
+}
+
+void	ft_putstr(char *str)
+{
+	int x;
+
+	x = 0;
+	while (str[x] != '\0')
+	{
+		ft_putchar(str[x]);
 		x++;
 	}
 }
 
 int		main(int argc, char **argv)
 {
-	char	*swap;
-	int		x;
-	int		y;
+	char	*str;
+	int		i;
+	int		size;
 
-	x = 1;
-	while (x < argc)
+	i = 1;
+	while (i < argc)
 	{
-		y = 1;
-		while (y < argc)
-		{
-			if (ft_strcmp(argv[x], argv[y]) < 0)
-			{
-				swap = argv[x];
-				argv[x] = argv[y];
-				argv[y] = swap;
-			}
-			y++;
-		}
-		x++;
+		size = ft_strlen(argv[i]);
+		str = ft_sort_int_tab(argv[i], size);
+		ft_putstr(str);
+		ft_putchar('\n');
+		i++;
 	}
-	ft_putstr(argv);
 	return (0);
 }

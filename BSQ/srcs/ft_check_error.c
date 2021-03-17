@@ -6,9 +6,11 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 18:33:34 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 18:35:33 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/16 12:52:37 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/bsqlib.h"
 
 void	ft_check_error(int n)
 {

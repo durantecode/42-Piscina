@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 09:42:18 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 16:05:29 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/16 19:38:29 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		main(int argc, char **argv)
 			write(1, &argv[0][i], 1);
 			i++;
 		}
+		write(1, "\n", 1);
 	}
-	write(1, "\n", 1);
 	return (0);
 }

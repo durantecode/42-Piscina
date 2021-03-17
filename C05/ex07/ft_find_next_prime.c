@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 08:58:00 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/15 14:02:26 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/16 20:57:28 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ int		ft_find_next_prime(int nb)
 
 int		main(void)
 {
-	printf("%d\n", ft_find_next_prime(402));
+	printf("%d\n", ft_find_next_prime(2147483644));
 }
