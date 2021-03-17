@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   get_full_array.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 12:10:08 by irueda-g          #+#    #+#             */
-/*   Updated: 2021/03/16 16:37:00 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/17 20:20:02 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/17 20:38:39 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "../includes/bsqlib.h"
 
-int		ft_strlen(char *str)
+void	get_full_array(char *get_map)
 {
-	int u;
-	int n;
+	int i;
+	int j;
+	int k;
 
-	u = 0;
-	n = 0;
-	while (str[u] != '\0')
+	i = 0;
+	j = 0;
+	k = 0;
+	while (get_map[i] != '\0')
 	{
-		n++;
-		u++;
+		if (get_map[i] == '\n')
+		{
+			i++;
+			while (get_map[i] != '\n')
+			{
+				g_array_map[j][k] = get_map[i];
+				k++;
+				i++;
+			}
+			j++;
+		}
+		i++;
+		k = 0;
 	}
-	return (n);
-	return (0);
-}
-
-int		main(void)
-{
-	int z;
-
-	printf("%d\n", ft_strlen("hola"));
 }

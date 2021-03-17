@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   open_map.c                                         :+:      :+:    :+:   */
+/*   get_first_line.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 18:47:28 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/16 18:53:58 by ldurante         ###   ########.fr       */
+/*   Created: 2021/03/17 20:19:10 by ldurante          #+#    #+#             */
+/*   Updated: 2021/03/17 20:52:31 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsqlib.h"
 
-char	*open_map(char *file_name)
+void	get_first_line(char *get_map)
 {
-	unsigned int	first_bytes;
-	unsigned int	map_size;
-	int				fd;
-	char			*map;
+	int	i;
 
-	//map = (char *)malloc(512);
-	first_bytes = 1;
-	fd = open(file_name, O_RDONLY);
-	while (first_bytes != '\n')
+	i = 0;
+	while (get_map[i] != '\n')
 	{
-		map_size = read(fd, map, first_bytes++);
+		g_first_line[i] = get_map[i];
+		i++;
 	}
-	if (fd == -1)
-		ft_check_error(0);
-	else if (first_bytes == 0)
-		ft_check_error(0);
-	
-	//map[size] = '\0';
-	
-	close(fd);
-	return (map);
+	g_first_line[i] = '\0';
 }
