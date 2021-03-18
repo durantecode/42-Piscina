@@ -6,14 +6,13 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 16:08:02 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/17 12:37:55 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/18 18:44:30 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -31,7 +30,7 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	i = 0;
-	ptr = (char *)malloc(ft_strlen(src));
+	ptr = (char *)malloc(ft_strlen(src) + 1);
 	if (!(ptr))
 		return (NULL);
 	else

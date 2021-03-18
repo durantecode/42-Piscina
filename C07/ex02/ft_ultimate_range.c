@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 08:53:58 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/17 15:01:15 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/18 20:06:15 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,35 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int		*ft_ultimate_range(int **range, int min, int max)
+int		ft_ultimate_range(int **range, int min, int max)
 {
-	int	i;
+	int i;
+	int	*ptr;
 
 	i = 0;
-	range = (int *)malloc(max - min);
 	if (min >= max)
 	{
-		range = NULL;
+		*range = NULL;
 		return (0);
 	}
+	ptr = (int *)malloc(max - min);
+	if (ptr == NULL)
+		return (-1);
 	while (min < max)
 	{
-		range[i] = min;
+		ptr[i] = min;
 		min++;
 		i++;
 	}
-	range[i] = '\0';
-	return (range);
+	*range = ptr;
+	return (i);
 }
 
 int		main(void)
 {
-	printf("%d", ft_range(1, 2)[1]);
+	int *range;
+
+	printf("%d", ft_ultimate_range(&range, -2147483648, 2147483647));
+	//printf("%d", ft_ultimate_range(&range, 45, 12));
+	//printf("%d", ft_ultimate_range(&range, -4, 12));
 }
