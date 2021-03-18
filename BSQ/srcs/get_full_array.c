@@ -6,35 +6,37 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 20:20:02 by ldurante          #+#    #+#             */
-/*   Updated: 2021/03/17 20:38:39 by ldurante         ###   ########.fr       */
+/*   Updated: 2021/03/18 21:34:34 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsqlib.h"
 
-void	get_full_array(char *get_map)
+void	get_full_array(char *get_map, int column, int row, int first_line)
 {
-	int i;
-	int j;
-	int k;
+	int		i;
+	int		j;
+	int		k;
+	char	*ptr;
 
 	i = 0;
 	j = 0;
 	k = 0;
+	g_array_map = (char **)malloc(row);
+	while (i < row)
+	{
+		g_array_map[i] = (char *)malloc(column);
+		i++;
+	}
+	i = first_line + 1;
 	while (get_map[i] != '\0')
 	{
-		if (get_map[i] == '\n')
-		{
-			i++;
-			while (get_map[i] != '\n')
-			{
-				g_array_map[j][k] = get_map[i];
-				k++;
-				i++;
-			}
-			j++;
-		}
-		i++;
+		ptr = (char *)malloc(column);
+		while (get_map[i] != '\n')
+			ptr[k++] = get_map[i++];
+		g_array_map[j++] = ptr;
 		k = 0;
+		i++;
 	}
+	free(ptr);
 }
